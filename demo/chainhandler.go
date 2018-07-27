@@ -1,12 +1,12 @@
 package main
 
 import (
-	"evm/kernal"
+	"evm/kernel"
 )
 
 type ETHChainHandler struct{}
 
-func (ethChainHandler *ETHChainHandler) GetBlockHeaderHash(uint64) kernal.Hash {
+func (ethChainHandler *ETHChainHandler) GetBlockHeaderHash(uint64) kernel.Hash {
 	//just return a fake value
-	return kernal.HexToHash("this is a demo")
+	return kernel.HexToHash("this is a demo")
 }
