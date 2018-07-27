@@ -76,7 +76,7 @@ if err != nil {
 #### 编译运行
 执行上面的demo十分的简单主要执行以下的几步操作即可：
 * 确认你的机器上有golang的编译环境
-* git clone 代码到你的机器的任何路径，无需放到GOPATH下
+* git clone 代码到$GOPATH/src/evm下
 * 进入demo文件夹，执行go build命令
 * 运行demo即可
 
