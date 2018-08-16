@@ -1,7 +1,7 @@
 package main
 
 import (
-	"evm/kernal"
+	"evm/kernel"
 	"fmt"
 	"math/big"
 )
@@ -13,12 +13,12 @@ func main() {
 	TestInput := []byte("Contract")
 	TestCallerAddress := []byte("TestAddress")
 	TestContractAddress := []byte("TestContract")
-	calleraddress := kernal.BytesToAddress(TestCallerAddress)
-	contractaddress := kernal.BytesToAddress(TestContractAddress)
+	calleraddress := kernel.BytesToAddress(TestCallerAddress)
+	contractaddress := kernel.BytesToAddress(TestContractAddress)
 	evm := CreateExecuteRuntime(calleraddress)
 	evm.StateDBHandler.CreateAccount(contractaddress)
-	evm.StateDBHandler.SetCode(contractaddress, kernal.Hex2Bytes(HexTestCode))
-	caller := kernal.AccountRef(evm.Origin)
+	evm.StateDBHandler.SetCode(contractaddress, kernel.Hex2Bytes(HexTestCode))
+	caller := kernel.AccountRef(evm.Origin)
 	ret, _, err := evm.Call(
 		caller,
 		contractaddress,
